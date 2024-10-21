@@ -1,0 +1,52 @@
+.contact{
+  background: var(--second-bg-color);
+  h2{
+    margin-bottom: 3rem;
+  }
+  form{
+    background: var(--bg-color);
+    max-width: 90rem;
+    margin: 1.5rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 3rem;
+    border-radius: 2rem;
+  }
+  form a{
+    color: var(--text-color-white);
+    font-size: 1.8rem;
+  }
+  form i{
+    color: var(--text-color-yellow);
+    font-size: 6rem;
+    margin-bottom: 1rem;
+  }
+}
+.contact form .input-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color-white);
+  background: var(--second-bg-color);
+  border-radius: .8rem;
+  margin: .7rem 0;
+}
+.contact form .input-box input{
+  width: 49%;
+}
+textarea{
+  height: 30vh;
+  resize: none;
+}
+.contact form .btn{
+  margin-top: 1.8rem;
+}
+.whatsApp{
+  width: 20vw;
+}

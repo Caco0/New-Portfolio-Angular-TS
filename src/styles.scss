@@ -1,0 +1,57 @@
+/* Global SCSS Styles*/
+*{
+  border: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+:root{
+  --main-second-color: #FFD60A;
+  --bg-color: #0b1320;
+  --second-bg-color: #21345a;
+  --text-color-white: #E5E5E5;
+  --text-color-yellow: #FCA311;
+}
+html{
+  font-size: 62.5%;
+  // overflow-y: hidden;
+}
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color-white);
+
+  display: flex;
+  justify-content: center;
+}
+section{
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+  min-height: 100vh;
+}
+.btn{
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--text-color-yellow);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-second-color);
+
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--bg-color);
+  letter-spacing: .1rem;
+  transition: .3s ease;
+}
+.btn:hover{
+  box-shadow: none;
+}
+.heading{
+  text-align: center;
+  font-size: 4.5rem;
+  span{
+    color: var(--text-color-yellow);
+  }
+}
