@@ -17,7 +17,7 @@ export class PortfolioComponent {
       target: 'blank',
       rel: 'noreferrer noopener',
       div: {
-        h4: 'Sis. de Gestão de Dados Acadêmico',
+        h4: 'Sis. Gest. de Dados Acadêmico Python',
         p: 'Implementação de estruturas, condicionais if elif else, e estruturas de repetição for e while, funções com retorno e para navegar e manipular dados do sistema, com o avanço nos estudos serão incluídas classes e mais funções no código, afim de deixar o sistema eficiente e com o código com fácil leitura, boas praticas de programação. Volte mais vezes para conferir o andamento do projeto!',
       },
     },
