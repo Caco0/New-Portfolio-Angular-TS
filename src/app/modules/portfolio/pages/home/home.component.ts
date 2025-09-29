@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import Typed from 'typed.js';
 
 //Components of home
 import { HeaderComponent } from '../../components/header/header.component';
@@ -24,6 +25,27 @@ import { FooterComponent } from '../../components/footer/footer.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit, OnDestroy {
+  private typed?: Typed;
 
+  ngAfterViewInit(){
+    this.typed = new Typed('.multiple-text', {
+      strings: [
+        'Graduando em Inteligência Artificial Aplicada',
+        'AI Agentes Developer',
+        'AI Prompt Engineer',
+        'Frontend Developer',
+        'Angular Developer',
+        'Social Media'
+      ],
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 1000,
+      loop: true
+    });
+  }
+
+  ngOnDestroy(){
+    this.typed?.destroy();
+  }
 }

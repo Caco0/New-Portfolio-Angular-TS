@@ -1,15 +1,15 @@
 <section class="contact" id="contact">
   <h2 class="heading">Contate <span>Me</span></h2>
-  <form action="#">
+  <form (submit)="enviarEmail($event)">
     <div class="input-box">
-      <input type="text" placeholder="Nome Completo" required />
-      <input type="email" placeholder="Email" required />
+      <input type="text" placeholder="Nome Completo" [(ngModel)]="formdata.nome" required/>
+      <input type="email" placeholder="Email" [(ngModel)]="formdata.email" required/>
     </div>
     <div class="input-box">
-      <input type="tel" placeholder="Telefone" required />
-      <input type="text" placeholder="Assunto" required />
+      <input type="tel" placeholder="Telefone" [(ngModel)]="formdata.telefone" required />
+      <input type="text" placeholder="Assunto" [(ngModel)]="formdata.assunto" required />
     </div>
-    <textarea placeholder="Sua Mensagem" required></textarea>
+    <textarea placeholder="Sua Mensagem" [(ngModel)]="formdata.message" required></textarea>
     <input type="submit" value="Enviar Mensagem" class="btn">
   </form>
     <form class="whatsApp">
