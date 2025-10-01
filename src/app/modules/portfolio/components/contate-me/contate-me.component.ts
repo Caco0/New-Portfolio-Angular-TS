@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contate-me',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './contate-me.component.html',
-  styleUrl: './contate-me.component.scss'
+  styleUrls: ['./contate-me.component.scss']
 })
 export class ContateMeComponent {
   formdata = {
@@ -21,16 +22,16 @@ export class ContateMeComponent {
     e.preventDefault();
 
     emailjs.send(
-      'SEU_SERVICE_ID',
-      'SEU_TEMPLATE_ID',
+      'service_pszxti7', // service ID
+      'template_lgp6fcv', // template ID
       {
         from_name: this.formdata.name,
         from_email: this.formdata.email,
         phone: this.formdata.telefone,
         subject: this.formdata.assunto,
         message: this.formdata.message
-      }
-      'SEU_PUBLIC_KEY'
+      },
+      '9ZEM73NTd-pyme3qR' // public key
     )
     .then(() => alert('Email enviado com sucesso!'))
     .catch(() => alert('Erro ao enviar email, tente novamente!'));
