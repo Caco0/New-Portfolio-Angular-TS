@@ -23,12 +23,13 @@ import { FooterComponent } from '../../components/footer/footer.component';
     FooterComponent
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   private typed?: Typed;
 
   ngAfterViewInit(){
+    setTimeout(() => {
     this.typed = new Typed('.multiple-text', {
       strings: [
         'Graduando em Inteligência Artificial Aplicada',
@@ -42,6 +43,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       backSpeed: 50,
       backDelay: 1000,
       loop: true
+    });
     });
   }
 
