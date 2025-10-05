@@ -28,26 +28,33 @@ import { FooterComponent } from '../../components/footer/footer.component';
 export class HomeComponent implements AfterViewInit, OnDestroy {
   private typed?: Typed;
 
-  ngAfterViewInit(){
+  ngAfterViewInit(): void {
+    // Delay leve para garantir que o DOM foi renderizado completamente
     setTimeout(() => {
-    this.typed = new Typed('.multiple-text', {
-      strings: [
-        'Graduando em Inteligência Artificial Aplicada',
-        'AI Agentes Developer',
-        'AI Prompt Engineer',
-        'Frontend Developer',
-        'Angular Developer',
-        'Social Media'
-      ],
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 1000,
-      loop: true
-    });
-    });
+      const el = document.querySelector('.multiple-text');
+      if (el) {
+        this.typed = new Typed('.multiple-text', {
+          strings: [
+            'Graduando em Inteligência Artificial Aplicada',
+            'AI Agentes Developer',
+            'AI Prompt Engineer',
+            'Frontend Developer',
+            'Angular Developer',
+            'Social Media'
+          ],
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 1000,
+          loop: true
+        });
+      } else {
+        console.error('Elemento ".multiple-text" não encontrado!');
+      }
+    }, 300); // meio segundo é o suficiente
   }
 
-  ngOnDestroy(){
+  ngOnDestroy(): void {
     this.typed?.destroy();
   }
 }
+

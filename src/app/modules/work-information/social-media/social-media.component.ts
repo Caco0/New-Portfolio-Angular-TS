@@ -3,12 +3,12 @@ import { HeaderComponent } from '../../portfolio/components/header/header.compon
 import { FooterComponent } from '../../portfolio/components/footer/footer.component';
 
 @Component({
-  selector: 'app-ai-agents',
+  selector: 'app-social-media',
   standalone: true,
   imports: [HeaderComponent, FooterComponent],
-  templateUrl: './ai-agents.component.html',
-  styleUrls: ['./ai-agents.component.scss']
+  templateUrl: './social-media.component.html',
+  styleUrls: ['./social-media.component.scss']
 })
-export class AiAgentsComponent {
+export class SocialMediaComponent {
 
 }
