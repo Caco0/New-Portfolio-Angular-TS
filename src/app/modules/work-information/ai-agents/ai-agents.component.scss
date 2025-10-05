@@ -9,6 +9,7 @@
   border: solid 1px #70cdf8;
   border-radius: 2rem;
 }
+
 .banner-ai{
   width: 100%;
   height: auto;
@@ -22,7 +23,46 @@
   bottom: 2rem;
   left: 3rem;
   color: white;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 600;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+.banner-ai-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, transparent 60%);
+  pointer-events: none;
+}
+h2 {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  overflow: hidden;
+  border-right: 2px solid #70cdf8; /* cursor */
+  white-space: nowrap;
+  width: 0; /* começa vazio */
+  animation: typing 3s steps(40, end) 1s forwards, blink 0.8s step-end infinite;
+}
+
+/* Digita e PARA */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 28ch; /* número de caracteres exato do texto */
+  }
+}
+
+/* Cursor piscando */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
