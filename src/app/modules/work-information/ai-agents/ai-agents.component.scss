@@ -1,5 +1,6 @@
 .ai-agents{
   margin: 1rem auto;
+  background: var(--second-bg-color);
 }
 .banner-ai-container{
   position: relative;
@@ -49,6 +50,34 @@ h2 {
   animation: typing 3s steps(40, end) 1s forwards, blink 0.8s step-end infinite;
 }
 
+.topic-title{
+  font-size: 3.5rem;
+  margin-top: 2rem;
+}
+hr{
+  margin: 2.5rem 0;
+  border: none;
+  border-top: 1px solid #70cdf8;
+}
+.ai-agents {
+  p{
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+  li{
+    font-size: 2rem;
+    margin: 0.5rem 0 0 2rem;
+  }
+  ul{
+    margin: 1.5rem 0;
+  }
+  span{
+    font-weight: 600;
+  }
+}
+.ai-content{
+  margin-top: 5rem;
+}
 /* Digita e PARA */
 @keyframes typing {
   from {

@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
 }

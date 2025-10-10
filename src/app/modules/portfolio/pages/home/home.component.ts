@@ -45,7 +45,10 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
           typeSpeed: 100,
           backSpeed: 50,
           backDelay: 1000,
-          loop: true
+          loop: false,
+          showCursor: true,
+          cursorChar: '|',
+
         });
       } else {
         console.error('Elemento ".multiple-text" não encontrado!');
