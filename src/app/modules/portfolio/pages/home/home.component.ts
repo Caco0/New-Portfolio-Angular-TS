@@ -45,7 +45,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
           typeSpeed: 100,
           backSpeed: 50,
           backDelay: 1000,
-          loop: false,
+          loop: true,
           showCursor: true,
           cursorChar: '|',
 
