@@ -1,0 +1,18 @@
+<h2>Agente de IA</h2>
+<p>Teste a seguir uma versão simplificada de um Agente que pode fornecer informações como um assistente de contato que fornece informações para contratar meus serviços</p>
+<div class="chatbot-container">
+  <div class="chat-window">
+    <div *ngFor="let msg of messages" [ngClass]="msg.role">
+      <p>{{ msg.content }}</p>
+    </div>
+    <div *ngIf="loading" class="loading">Digitando...</div>
+  </div>
+  <div class="chat-input">
+    <input
+      [(ngModel)]="userInput"
+      (keydown.enter)="sendMessage()"
+      placeholder="Digite sua mensagem..."
+    />
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+</div>

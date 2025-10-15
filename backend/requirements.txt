@@ -1,0 +1,14 @@
+# Servidor e CORS
+Flask==3.1.2
+flask-cors==6.0.1
+
+# Integração com OpenAI
+openai==1.52.2
+
+# Variáveis de ambiente
+python-dotenv==1.0.1
+
+# Interface Streamlit (caso queira também rodar UI Python)
+streamlit==1.38.0
+
+gunicorn==23.0.0
