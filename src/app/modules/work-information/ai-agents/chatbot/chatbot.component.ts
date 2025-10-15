@@ -15,8 +15,8 @@ export class ChatbotComponent {
   messages: { role: string; content: string }[] = [];
   loading = false;
 
-  // 🔗 Endereço do backend Flask
-  private apiUrl = 'http://127.0.0.1:5000/chat';
+  // 🔗 URL do backend Flask hospedado no Heroku
+  private apiUrl = 'https://rafael-ai-backend-b1d2fb2a27e5.herokuapp.com/chat';
 
   constructor(private http: HttpClient) {}
 
@@ -25,8 +25,10 @@ export class ChatbotComponent {
 
     const userMessage = this.userInput;
     this.messages.push({ role: 'user', content: userMessage });
+    this.userInput = '';
     this.loading = true;
 
+    // Faz a requisição ao backend Flask
     this.http.post<{ reply: string }>(this.apiUrl, { message: userMessage }).subscribe({
       next: (res) => {
         this.messages.push({ role: 'assistant', content: res.reply });
@@ -36,12 +38,11 @@ export class ChatbotComponent {
         console.error('Erro na requisição:', err);
         this.messages.push({
           role: 'assistant',
-          content: '⚠️ Erro ao se comunicar com o servidor Flask.'
+          content: '⚠️ Erro ao se comunicar com o servidor Flask hospedado no Heroku.'
         });
         this.loading = false;
       }
     });
-
-    this.userInput = '';
   }
 }
+
