@@ -8,7 +8,26 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # permite requisições do Angular
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "http://localhost:4200",
+            "https://new-portfolio-angular-ts.vercel.app"
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "expose_headers": ["Content-Type"],
+    }
+})  # permite requisições do Angular
+
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', 'https://new-portfolio-angular-ts.vercel.app')
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:4200')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+    return response
 
 
 # Inicializar cliente OpenAI
@@ -111,4 +130,5 @@ além de ter conhecimentos em Azure e Inteligência Artificial Aplicada.”
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+
